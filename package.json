@@ -1,5 +1,5 @@
 {
-  "name": "@kodokutsurai/helpdesk-sdk",
+  "name": "@kodokutsurai/helpdeskeddy-sdk",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
