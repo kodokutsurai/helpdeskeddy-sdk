@@ -19,4 +19,5 @@ type CommonConfig = {
   };
 };
 
+/** base client config includes auth config and rate limits (optional) */
 export type ClientConfig = (BasicAuthConfig | TokenAuthConfig) & CommonConfig;

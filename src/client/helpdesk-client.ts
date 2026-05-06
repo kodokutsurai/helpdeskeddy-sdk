@@ -17,7 +17,7 @@ export type ClientConfig =
   | { baseUrl: string; email: string; apiKey: string }
   | { baseUrl: string; token: string };
 
-export class HelpdeskClient {
+export class HelpdeskEddyClient {
   public tickets: TicketsResource;
   public departments: DepartmentsResource;
   public users: UsersResource;
