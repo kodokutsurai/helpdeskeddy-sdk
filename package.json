@@ -15,7 +15,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
     "smoke:get": "node scripts/smoke-get.mjs"
   },
   "devDependencies": {
