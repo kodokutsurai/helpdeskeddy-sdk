@@ -1,5 +1,6 @@
 import {
   ApiDataResponse,
+  ApiPaginatedResponse,
   KnowledgeArticle,
   KnowledgeCategory,
 } from "../types/api-response.type.js";
@@ -13,14 +14,14 @@ export class KnowledgeBaseResource extends BaseResource {
    * Returns knowledge base categories.
    */
   getCategories(query?: KnowledgeListQuery) {
-    return this.get<ApiDataResponse<Record<string, KnowledgeCategory>>>(`${this.base}/categories/`, query);
+    return this.get<ApiPaginatedResponse<Record<string, KnowledgeCategory>>>(`${this.base}/categories/`, query);
   }
 
   /**
    * Returns knowledge base articles.
    */
   getArticles(query?: KnowledgeListQuery) {
-    return this.get<ApiDataResponse<Record<string, KnowledgeArticle>>>(`${this.base}/articles/`, query);
+    return this.get<ApiPaginatedResponse<Record<string, KnowledgeArticle>>>(`${this.base}/articles/`, query);
   }
 
   /**

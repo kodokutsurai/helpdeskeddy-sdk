@@ -24,6 +24,11 @@ export interface Department {
 export interface Ticket {
   id: number;
   pid: number;
+  owner_id: number;
+  user_id: number;
+  user_name: string;
+  user_lastname: string;
+  user_email: string;
   unique_id: string;
   date_created: string;
   date_updated: string;
@@ -139,17 +144,30 @@ export interface KnowledgeCategory {
 
 export interface KnowledgeArticle {
   id: number;
+  body: LocalizedText;
+  title?: LocalizedText;
   date_created: string;
   date_updated: string;
   created_by: number;
   updated_by: number;
   access?: string;
-  title?: string;
   [key: string]: unknown;
 }
 
 export interface ApiDataResponse<T> {
   data: T;
+}
+
+export interface ApiPagination {
+  total: number | string;
+  per_page: number;
+  current_page: number;
+  total_pages: number;
+  [key: string]: unknown;
+}
+
+export interface ApiPaginatedResponse<T> extends ApiDataResponse<T> {
+  pagination: ApiPagination;
 }
 
 export type ApiDeleteResponse = ApiErrorResponse;

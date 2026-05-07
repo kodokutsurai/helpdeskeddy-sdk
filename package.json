@@ -15,7 +15,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "smoke:get": "node scripts/smoke-get.mjs"
+    "smoke:get": "node scripts/smoke-get.mjs",
+    "release:patch": "pnpm version patch && git push --follow-tags",
+    "release:minor": "pnpm version minor && git push --follow-tags",
+    "release:major": "pnpm version major && git push --follow-tags"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",

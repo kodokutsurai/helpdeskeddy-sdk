@@ -1,13 +1,15 @@
-import {
-  CustomFieldOptionsUpsertPayload,
-} from "../types/api-payload.type.js";
+import { CustomFieldOptionsUpsertPayload } from "../types/api-payload.type.js";
 import {
   ApiDataResponse,
   ApiDeleteResponse,
+  ApiPaginatedResponse,
   CustomField,
   CustomFieldOption,
 } from "../types/api-response.type.js";
-import { CustomFieldOptionsQuery, PaginationQuery } from "../types/api-query.type.js";
+import {
+  CustomFieldOptionsQuery,
+  PaginationQuery,
+} from "../types/api-query.type.js";
 import { BaseResource } from "./base-resource.js";
 
 export class TicketCustomFieldsResource extends BaseResource {
@@ -18,8 +20,12 @@ export class TicketCustomFieldsResource extends BaseResource {
    * Accepts either a page number for backward compatibility or a typed query object.
    */
   getAll(queryOrPage: PaginationQuery | number = { page: 1 }) {
-    const query = typeof queryOrPage === "number" ? { page: queryOrPage } : queryOrPage;
-    return this.get<ApiDataResponse<Record<string, CustomField>>>(`${this.base}/`, query);
+    const query =
+      typeof queryOrPage === "number" ? { page: queryOrPage } : queryOrPage;
+    return this.get<ApiPaginatedResponse<Record<string, CustomField>>>(
+      `${this.base}/`,
+      query,
+    );
   }
 
   /**
@@ -33,14 +39,23 @@ export class TicketCustomFieldsResource extends BaseResource {
    * Returns options for a ticket custom field.
    */
   getOptions(fieldId: number, query?: CustomFieldOptionsQuery) {
-    return this.get<ApiDataResponse<CustomFieldOption[]>>(`${this.base}/${fieldId}/options/`, query);
+    return this.get<ApiDataResponse<CustomFieldOption[]>>(
+      `${this.base}/${fieldId}/options/`,
+      query,
+    );
   }
 
   upsertOptions(fieldId: number, payload: CustomFieldOptionsUpsertPayload) {
-    return this.post<ApiDataResponse<CustomFieldOption[]>>(`${this.base}/${fieldId}/options/`, payload);
+    return this.post<ApiDataResponse<CustomFieldOption[]>>(
+      `${this.base}/${fieldId}/options/`,
+      payload,
+    );
   }
 
   deleteOption(fieldId: number, optionId: number) {
-    return this.delete<ApiDeleteResponse>(`${this.base}/${fieldId}/options/${optionId}`, undefined);
+    return this.delete<ApiDeleteResponse>(
+      `${this.base}/${fieldId}/options/${optionId}`,
+      undefined,
+    );
   }
 }

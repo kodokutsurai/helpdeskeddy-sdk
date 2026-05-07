@@ -1,6 +1,7 @@
 import {
   ApiDataResponse,
   ApiDeleteResponse,
+  ApiPaginatedResponse,
   BillingEntry,
   Ticket,
   TicketComment,
@@ -23,7 +24,7 @@ export class TicketsResource extends BaseResource {
    * Returns tickets using optional filtering and pagination query params.
    */
   getAll(query?: TicketsListQuery) {
-    return this.get<ApiDataResponse<Record<string, Ticket>>>(`${this.base}/`, query);
+    return this.get<ApiPaginatedResponse<Record<string, Ticket>>>(`${this.base}/`, query);
   }
 
   getById(ticketId: number) {
@@ -55,7 +56,7 @@ export class TicketsResource extends BaseResource {
    */
   getPosts(ticketId: number, queryOrPage: PaginationQuery | number = { page: 1 }) {
     const query = typeof queryOrPage === "number" ? { page: queryOrPage } : queryOrPage;
-    return this.get<ApiDataResponse<TicketPost[]>>(`${this.base}/${ticketId}/posts/`, query);
+    return this.get<ApiPaginatedResponse<TicketPost[]>>(`${this.base}/${ticketId}/posts/`, query);
   }
 
   addPost(ticketId: number, payload: TicketPostPayload) {
@@ -74,7 +75,7 @@ export class TicketsResource extends BaseResource {
   }
 
   getComments(ticketId: number) {
-    return this.get<ApiDataResponse<TicketComment[]>>(`${this.base}/${ticketId}/comments/`);
+    return this.get<ApiPaginatedResponse<TicketComment[]>>(`${this.base}/${ticketId}/comments/`);
   }
 
   addComment(ticketId: number, payload: TicketCommentPayload) {

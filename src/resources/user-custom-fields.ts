@@ -4,6 +4,7 @@ import {
 import {
   ApiDataResponse,
   ApiDeleteResponse,
+  ApiPaginatedResponse,
   CustomField,
   CustomFieldOption,
 } from "../types/api-response.type.js";
@@ -17,7 +18,7 @@ export class UserCustomFieldsResource extends BaseResource {
    * Returns user custom fields.
    */
   getAll(query?: PaginationQuery) {
-    return this.get<ApiDataResponse<Record<string, CustomField>>>(`${this.base}/`, query);
+    return this.get<ApiPaginatedResponse<Record<string, CustomField>>>(`${this.base}/`, query);
   }
 
   /**
@@ -33,7 +34,7 @@ export class UserCustomFieldsResource extends BaseResource {
    */
   getOptions(fieldId: number, queryOrPage: CustomFieldOptionsQuery | number = { page: 1 }) {
     const query = typeof queryOrPage === "number" ? { page: queryOrPage } : queryOrPage;
-    return this.get<ApiDataResponse<CustomFieldOption[]>>(`${this.base}/${fieldId}/options/`, query);
+    return this.get<ApiPaginatedResponse<CustomFieldOption[]>>(`${this.base}/${fieldId}/options/`, query);
   }
 
   upsertOptions(fieldId: number, payload: CustomFieldOptionsUpsertPayload) {
