@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import { RateLimiter } from "./rate-limiter";
+import { RateLimiter } from "./rate-limiter.js";
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));

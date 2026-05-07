@@ -2,13 +2,20 @@
   "name": "@kodokutsurai/helpdeskeddy-sdk",
   "version": "1.0.0",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "smoke:get": "node scripts/smoke-get.mjs"
   },
   "devDependencies": {

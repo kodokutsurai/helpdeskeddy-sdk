@@ -1,5 +1,5 @@
-import { ApiDataResponse, DictionaryItem } from "../types/api-response.type";
-import { BaseResource } from "./base-resource";
+import { ApiDataResponse, DictionaryItem } from "../types/api-response.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class DictionariesResource extends BaseResource {
   /**

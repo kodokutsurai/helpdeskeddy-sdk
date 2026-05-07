@@ -1,4 +1,4 @@
-import { TicketStatus, UserStatus } from "./api-payload.type";
+import { TicketStatus, UserStatus } from "./api-payload.type.js";
 
 /**
  * Common pagination query parameters.

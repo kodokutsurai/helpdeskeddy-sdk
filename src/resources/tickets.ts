@@ -5,16 +5,16 @@ import {
   Ticket,
   TicketComment,
   TicketPost,
-} from "../types/api-response.type";
+} from "../types/api-response.type.js";
 import {
   TicketCommentPayload,
   TicketCreatePayload,
   TicketPostPayload,
   TicketUnionPayload,
   TicketUpdatePayload,
-} from "../types/api-payload.type";
-import { PaginationQuery, TicketsListQuery } from "../types/api-query.type";
-import { BaseResource } from "./base-resource";
+} from "../types/api-payload.type.js";
+import { PaginationQuery, TicketsListQuery } from "../types/api-query.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class TicketsResource extends BaseResource {
   private base = "/api/v2/tickets";

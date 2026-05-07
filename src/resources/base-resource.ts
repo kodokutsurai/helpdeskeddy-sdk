@@ -1,4 +1,4 @@
-import { HttpClient } from "../client/http-client";
+import { HttpClient } from "../client/http-client.js";
 import { AxiosRequestConfig } from "axios";
 
 export class BaseResource {

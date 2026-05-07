@@ -3,14 +3,14 @@ import {
   ApiDeleteResponse,
   Note,
   Organization,
-} from "../types/api-response.type";
+} from "../types/api-response.type.js";
 import {
   NoteCreatePayload,
   OrganizationCreatePayload,
   OrganizationUpdatePayload,
-} from "../types/api-payload.type";
-import { NotesListQuery, OrganizationsListQuery } from "../types/api-query.type";
-import { BaseResource } from "./base-resource";
+} from "../types/api-payload.type.js";
+import { NotesListQuery, OrganizationsListQuery } from "../types/api-query.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class OrganizationsResource extends BaseResource {
   private base = "/api/v2/organizations";

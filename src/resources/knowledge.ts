@@ -2,9 +2,9 @@ import {
   ApiDataResponse,
   KnowledgeArticle,
   KnowledgeCategory,
-} from "../types/api-response.type";
-import { KnowledgeListQuery } from "../types/api-query.type";
-import { BaseResource } from "./base-resource";
+} from "../types/api-response.type.js";
+import { KnowledgeListQuery } from "../types/api-query.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class KnowledgeBaseResource extends BaseResource {
   private base = "/api/v2/knowledge_base";

@@ -1,5 +1,5 @@
-import { TelephonyCallPayload } from "../types/api-payload.type";
-import { BaseResource } from "./base-resource";
+import { TelephonyCallPayload } from "../types/api-payload.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class TelephonyResource extends BaseResource {
   /**

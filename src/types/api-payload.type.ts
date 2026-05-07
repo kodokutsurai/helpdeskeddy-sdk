@@ -1,4 +1,4 @@
-import { LocalizedText } from "./api-response.type";
+import { LocalizedText } from "./api-response.type.js";
 
 export type TicketStatus = "open" | "pending" | "solved" | "closed" | string;
 export type UserStatus = "active" | "disabled" | string;

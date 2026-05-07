@@ -1,2 +1,2 @@
-export { HelpdeskEddyClient } from "./client/helpdesk-client";
-export type { ClientConfig } from "./client/helpdesk-client";
+export { HelpdeskEddyClient } from "./client/helpdesk-client.js";
+export type { ClientConfig } from "./client/helpdesk-client.js";

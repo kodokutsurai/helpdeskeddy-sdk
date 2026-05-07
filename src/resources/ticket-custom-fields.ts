@@ -1,14 +1,14 @@
 import {
   CustomFieldOptionsUpsertPayload,
-} from "../types/api-payload.type";
+} from "../types/api-payload.type.js";
 import {
   ApiDataResponse,
   ApiDeleteResponse,
   CustomField,
   CustomFieldOption,
-} from "../types/api-response.type";
-import { CustomFieldOptionsQuery, PaginationQuery } from "../types/api-query.type";
-import { BaseResource } from "./base-resource";
+} from "../types/api-response.type.js";
+import { CustomFieldOptionsQuery, PaginationQuery } from "../types/api-query.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class TicketCustomFieldsResource extends BaseResource {
   private base = "/api/v2/custom_fields";

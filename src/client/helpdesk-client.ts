@@ -1,17 +1,17 @@
-import { DepartmentsResource } from "../resources/departments";
-import { DictionariesResource } from "../resources/dictionaries";
-import { KnowledgeBaseResource } from "../resources/knowledge";
-import { OrganizationCustomFieldsResource } from "../resources/organization-custom-fields";
-import { OrganizationsResource } from "../resources/organizations";
-import { SystemResource } from "../resources/system";
-import { TelephonyResource } from "../resources/telephony";
-import { TicketCustomFieldsResource } from "../resources/ticket-custom-fields";
-import { TicketsResource } from "../resources/tickets";
-import { UserCustomFieldsResource } from "../resources/user-custom-fields";
-import { UsersResource } from "../resources/users";
-import { createAuthHeaders } from "./auth";
-import { HttpClient } from "./http-client";
-import { RateLimiter } from "./rate-limiter";
+import { DepartmentsResource } from "../resources/departments.js";
+import { DictionariesResource } from "../resources/dictionaries.js";
+import { KnowledgeBaseResource } from "../resources/knowledge.js";
+import { OrganizationCustomFieldsResource } from "../resources/organization-custom-fields.js";
+import { OrganizationsResource } from "../resources/organizations.js";
+import { SystemResource } from "../resources/system.js";
+import { TelephonyResource } from "../resources/telephony.js";
+import { TicketCustomFieldsResource } from "../resources/ticket-custom-fields.js";
+import { TicketsResource } from "../resources/tickets.js";
+import { UserCustomFieldsResource } from "../resources/user-custom-fields.js";
+import { UsersResource } from "../resources/users.js";
+import { createAuthHeaders } from "./auth.js";
+import { HttpClient } from "./http-client.js";
+import { RateLimiter } from "./rate-limiter.js";
 
 export type ClientConfig =
   | { baseUrl: string; email: string; apiKey: string }

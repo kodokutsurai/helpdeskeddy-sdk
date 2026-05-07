@@ -1,6 +1,6 @@
-import { ChatVisitorSessionPayload } from "../types/api-payload.type";
-import { ApiDataResponse } from "../types/api-response.type";
-import { BaseResource } from "./base-resource";
+import { ChatVisitorSessionPayload } from "../types/api-payload.type.js";
+import { ApiDataResponse } from "../types/api-response.type.js";
+import { BaseResource } from "./base-resource.js";
 
 export class SystemResource extends BaseResource {
   /**
