@@ -5,7 +5,7 @@ TypeScript SDK for HelpDeskEddy API v2.
 ## Install
 
 ```bash
-npm i git+https://github.com/you/helpdeskeddy-sdk.git
+npm i git+https://github.com/kodokutsurai/helpdeskeddy-sdk.git
 ```
 
 ## Quick Start
