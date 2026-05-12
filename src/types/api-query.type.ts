@@ -78,6 +78,8 @@ export interface NotesListQuery extends PaginationQuery {
  * Query parameters for knowledge base lists.
  */
 export interface KnowledgeListQuery extends PaginationQuery {
+  /** Public filter */
+  public: boolean;
   /** Category identifier. */
   category_id?: number;
   /** Free-text search query. */
