@@ -5,7 +5,7 @@ export function createAuthHeaders(config: {
 }) {
   if (config.token) {
     return {
-      Authorization: `Bearer ${config.token}`,
+      Authorization: `Basic ${config.token}`,
       "Content-Type": "application/json",
     };
   }
