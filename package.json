@@ -1,7 +1,7 @@
 {
   "name": "@kodokutsurai/helpdeskeddy-sdk",
   "description": "TypeScript SDK for HelpDeskEddy API v2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
