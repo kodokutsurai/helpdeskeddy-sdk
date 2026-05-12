@@ -1,28 +1,36 @@
 {
   "name": "@kodokutsurai/helpdeskeddy-sdk",
+  "description": "TypeScript SDK for HelpDeskEddy API v2",
   "version": "1.0.1",
   "type": "module",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodokutsurai/helpdeskeddy-sdk.git"
+  },
+  "homepage": "https://github.com/kodokutsurai/helpdeskeddy-sdk#readme",
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
-      "default": "./dist/src/index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "tsc",
-    "smoke:get": "node scripts/smoke-get.mjs",
-    "release:patch": "pnpm version patch && git push --follow-tags",
-    "release:minor": "pnpm version minor && git push --follow-tags",
-    "release:major": "pnpm version major && git push --follow-tags"
+    "prepublishOnly": "npm run clean && npm run build",
+    "smoke": "node scripts/smoke-get.mjs"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "tsup": "^8.5.1"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "axios": "^1.16.0"

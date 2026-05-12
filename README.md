@@ -5,7 +5,7 @@ TypeScript SDK for HelpDeskEddy API v2.
 ## Install
 
 ```bash
-npm i git+https://github.com/kodokutsurai/helpdeskeddy-sdk.git
+npm i @kodokutsurai/helpdeskeddy-sdk
 ```
 
 ## Quick Start
@@ -128,7 +128,7 @@ const kbArticles = await client.knowledgeBase.getArticles({ page: 1 });
 For this repository there is a local smoke script for GET methods:
 
 ```bash
-npm run smoke:get
+npm run smoke
 ```
 
 Required env vars:
@@ -141,4 +141,3 @@ Optional:
 - `HDE_TICKET_ID`
 - `HDE_USER_ID`
 - `HDE_ORGANIZATION_ID`
-
